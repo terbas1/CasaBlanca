@@ -30,7 +30,7 @@ $(window).scroll(function(){
 
 //Script smoothScrool
 
-$('#my-awesome-nav a').click(function(){
+$('a').click(function(){
     var top = $('body').find($(this).attr('href')).offset().top-60;
 
     $('html, body').animate({
@@ -40,27 +40,6 @@ $('#my-awesome-nav a').click(function(){
     return false;
 });
 
-    
-
-$(function() {
- $('a[href="#ex1"]').click(function(event) {
-      event.preventDefault();
-      $(this).modal({
-        escapeClose: false,
-        clickClose: false,
-        showClose: false,
-        closeExisting: false,
-        fadeDuration: 100
-      });
-    });
-});
-
- $('.btncarta').click(function(){
-    $('body').addClass('bodyactive');
-});
- $('.modal-close').click(function(){
-    $('body').removeClass('bodyactive');
-});
 //
 
 $(document).ready(function(){
@@ -79,7 +58,19 @@ $(document).ready(function(){
 
 //
 
+$(document).ready(function(){
+	
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
 
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
 
 //
 
@@ -152,10 +143,3 @@ $(function() {
         });
 
     });
-
-
-
-
-    
-   
-
