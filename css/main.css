@@ -108,6 +108,7 @@ header {
     background-size: cover;
     background-repeat: repeat-x;
     background-position: bottom;
+    margin-top: -1px;
 }
 
 .fixed-header {
@@ -124,7 +125,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .list-inline li {
@@ -202,6 +203,10 @@ header {
 .shrink .list-inline{
 	margin-top: 0;
 }
+
+.shrink .container{
+	height: 100%;
+}
 .section {
 	height: 100%;
 	position: relative;
@@ -210,7 +215,6 @@ header {
 
 .img_logo_main{
 	width: 130px !important;
-    max-width: 130px !important;
 }
 .shrink .img_logo_main {
     content: url(../img/logo-black.png);
@@ -220,6 +224,9 @@ header {
 }
 
 @media screen and (min-width : 580px) {
+	.img_logo_main{
+		width: 170px !important;
+	}
 
 }
 
@@ -229,6 +236,10 @@ header {
 @media screen and (min-width: 1280px) {
 	.logo{
 		display: inherit!important;
+	}
+
+	.img_logo_main{
+		width: 130px !important;
 	}
 
 }
@@ -335,14 +346,54 @@ header {
 .casona-wrapper-title{
 	color: #fff;
 	margin-bottom: 10px;
+	display: flex;
+	font-size: 70px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: 'Barlow-Black';
+    flex-direction: column;
+    justify-content: flex-start;
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+}
+
+.casona-wrapper-title div{
+	margin-right: 20px;
+}
+.casona-wrapper-title div:last-child{
+	margin-right: 0px;
+}
+
+@media screen and (min-width : 580px) {
+	.casona-wrapper-title{
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	.casona-wrapper-title{
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.casona-wrapper-title{
+		flex-direction: row;
+	}
+
+
 }
 .titulos {
-    font-size: 70px;
+    
+}
+
+.titulos span{
+	font-size: 70px;
     font-weight: bolder;
     text-transform: uppercase;
     font-family: 'Barlow-Black';
 }
-
 .casona-wrapper-subtitle{
 	display: flex;
 	flex-direction: column;
@@ -462,7 +513,7 @@ header {
 	.casona-sofa{
 		z-index: inherit;
 		width: 40vh!important;
-		top: 15%;
+		top: 20%;
 		opacity: 1 !important;
 	}
 
@@ -496,7 +547,7 @@ header {
 	}
 
 	#local .container{
-		padding: 0 80px;
+		padding: 0px;
 	}
 
 }
@@ -580,7 +631,7 @@ header {
 
 @media screen and (min-width: 1280px) {
 	.carta-info{
-		padding: 24px 48px;
+		padding: 24px 40px;
 	}
 
 	.img_elocal-active{
@@ -594,15 +645,36 @@ header {
 }
 
 .parrafos-container{
-    padding-left: 3rem!important;
-    padding-right: 3rem!important;
+    padding-left:0rem!important;
+    padding-right: 0rem!important;
     padding-bottom: 1.5rem!important;
     padding-top: 1.5rem!important;
     margin-left: 3rem!important;
     margin-right: 3rem!important;
     margin-bottom: 30px;
 }
+@media screen and (min-width : 580px) {
+	.img_elocal-active{
+		transform: matrix(1.2, 0, 0, 1.2, 0, 0);
+	}
+}
 
+@media screen and (min-width: 980px) {
+}
+
+@media screen and (min-width: 1280px) {
+	.parrafos-container{
+		padding-left: 3rem!important;
+	    padding-right: 3rem!important;
+    }
+
+}
+
+.carta-info-title{
+	    font-family: 'Barlow-Black';
+    font-size: 70px;
+    text-transform: uppercase;
+}
 .carta-info-title span{
 	color: purple;
 }
@@ -654,12 +726,6 @@ header {
 
 }
 
-@media screen and (max-width: 1280px) {
-	.carta-content	{
-		max-height: 600px;
-	}
-
-}
 #carta{
 	height: auto;
 	flex-direction: column;
@@ -685,19 +751,18 @@ header {
 
 
 .carta-content-item{
-	flex: 0 0 100%;
-    max-width: 100%;
+	width: 100%;
     height: 400px;
     position: relative;
     object-fit: contain;
     overflow: hidden;
+    width:100%;
 
 }
 @media screen and (min-width : 580px) {
 	.carta-content-item{
-		flex: 0 0 50%;
-	    max-width: 50%;
-	    height: 400px;
+		width: 50%;
+	     height: 100vh;
 	}
 }
 
@@ -706,22 +771,21 @@ header {
 
 @media screen and (min-width: 1280px) {
 	.carta-content-item{
-		flex: 0 0 50%;
-	    max-width: 50%;
-	    height: 100%;
+		width: 50%;
+	    height: 100vh;
 	}
 
 }
 
-.carta-content-tab{
-	display: none;
-}
 .carta-content-item img{
 	width: 100%;
 	height: 100%;
 	transition: all .3s ease;
+	object-fit: cover;
 }
 .carta-content-text{
+	    align-items: center;
+	top:0;
 	color: #fff;
 	text-align: center;
 	position: absolute;
@@ -748,7 +812,7 @@ header {
     height: 100%;
     background: rgba(0,0,0,.6)!important;
     bottom: 0;
-    opacity: 0;
+    opacity: .5;
     align-items: center;
     display: flex;
     padding:20px;
@@ -764,23 +828,11 @@ header {
 	transform: scale(1.1);
 }
 
-.carta-content-tab .carta-content-item{
-	flex: 0 0 25%;
-    max-width: 25%;
-    height: 300px;
-}
-
-.carta-content-tab .titulos{
-	font-size: 24px;
+.carta-content-container{
 	display: flex;
-	flex-direction: column;
-	align-self: center;
-}
-
-.carta-content-tab .titulos-small{
-	font-size: 14px;
-	font-family: 'Barlow-Regular';
-	letter-spacing: 1px;
+	flex-direction:row;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .btn{
@@ -801,6 +853,7 @@ header {
     cursor: pointer;
     text-transform: uppercase;
     font-size: 16px;
+
 }
 .btncarta:hover {
     color: #e1ae23;
@@ -826,33 +879,33 @@ header {
 #reservas{
     background-image: url(../img/bg_reservas.new.jpg);
     height: auto;
-    padding: 50px 0;
+    padding: 120px 0;
 
 }
 @media screen and (min-width : 580px) {
-
+	#reservas{
+	    height: auto;
+    	padding: 120px 0;
+	}
 }
 
 @media screen and (min-width: 980px) {
+
+	#reservas{
+	    height: auto;
+    	padding: 120px 0;
+	}
 }
 
 @media screen and (min-width: 1280px) {
 	#reservas{
-	    height: 100%;
-	    padding: 0px 0;
+	    height: 100vh;
+	    padding: 0;
 
 	}
 
 }
 
-@media screen and (max-width: 1280px) {
-	#reservas{
-	    height: auto;
-    	padding: 80px 0;
-
-	}
-
-}
 .bg-overlay-black-2:before {
     background: rgba(0,0,0,.2)!important;
 }
@@ -896,7 +949,6 @@ header {
 @media screen and (min-width : 580px) {
 	.reservas-wrapper{
 		flex-direction:row;
-		padding-bottom: 40px;
 	}
 }
 
@@ -983,11 +1035,12 @@ label {
   position: absolute;
   top: -1em;
   padding: 10px 0;
-  font-family: sans-serif;
   letter-spacing: 1px;
   color: rgb(120,120,120);
   transition: all .3s ease;
   text-transform: uppercase;
+  font-family: 'Barlow-Bold';
+  font-size: 11px;
 }
 .input {
   width: 100%;
@@ -1033,10 +1086,24 @@ label {
 }
 
 .reservas-form{
-	width: 300px;
+	width: 100%;
 	margin: 30px auto;
 }
+@media screen and (min-width : 580px) {
+	.reservas-wrapper{
+		flex-direction:row;
+	}
+}
 
+@media screen and (min-width: 980px) {
+}
+
+@media screen and (min-width: 1280px) {
+	.reservas-form{
+		width: 300px;
+	}
+
+}
 .btn-reserva {
     background-color: transparent;
     border: 2px solid #672b8c;
@@ -1140,7 +1207,7 @@ label {
 .contactos-container-item{
 	width: 100%;
     position: relative;
-    height: 600px;
+    height: 700px;
 }
 @media screen and (min-width : 580px) {
 
@@ -1168,12 +1235,13 @@ label {
 }
 
 .contactos-container-info {
-    background-image: url(../img/comida.jpg);
-    background-size: 100% 100%;
+    background-image: url(../img/footer.jpg);
+    background-size: cover;
     width: 100%;
     height: 100%;
     display: flex;
     align-self: center;
+    z-index: 101;
     align-items: center;
 }
 @media screen and (min-width : 580px) {
@@ -1185,26 +1253,30 @@ label {
 
 @media screen and (min-width: 1280px) {
 	.contactos-container-info {
-	    background-image: url(../img/comida.jpg);
-	    background-size: 100% 100%;
-	    width: 100%;
-	    height: 100%;
-	    display: flex;
-	    align-self: center;
-	    align-items: center;
 }
 
 }
 .contactos-container-info-content{
 	width: 100%;
-	z-index: 1;
-	position: relative;
+	z-index: 100;
+	position: absolute;
 	margin: 0 auto;
 	text-align: center;
-}
+	top:0;
+	right: 0;
+	left:0;
+	height: 100%;
 
+	display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+.contactos-container-info-content-wrapper{
+	
+}
 .contactos-logo{
-	width: 180px;
+	width: 200px;
 	margin: 0 auto;
 }
 
@@ -1342,7 +1414,23 @@ ul.tabs li.current{
 
 .swiper-container {
   width: 100%;
-  height: 80%;
+  height: 100%;
+  padding: 0;
+}
+
+@media screen and (min-width : 580px) {
+
+}
+
+@media screen and (min-width: 980px) {
+}
+
+@media screen and (min-width: 1280px) {
+	.swiper-container {
+	  height: 100vh;
+	  padding: 80px 0;
+	}
+
 }
 .swiper-slide {
   text-align: center;
@@ -1595,17 +1683,11 @@ ul.tabs li.current{
 
 @media screen and (min-width: 1280px) {
 	#contactos{
-		height: 100%;
+		height: 100vh;
 	}
 
 }
 
-@media screen and (max-width: 1280px) {
-	#contactos{
-		height: 600px;
-	}
-
-}
 .overlay-marco-container{
 	width: 100%;
 	height: 100%;
@@ -1615,7 +1697,7 @@ ul.tabs li.current{
 }
 
 .contactos-container-wrapper{
-	padding: 150px 0;
+	padding: 0;
 }
 
 @media screen and (min-width : 580px) {
@@ -1635,19 +1717,25 @@ ul.tabs li.current{
 #casona{
 	overflow:hidden;
 	height: auto;
+	padding: 0;
 }
 @media screen and (min-width : 580px) {
 	#casona{
 		height: auto;
+		padding: 0;
 	}
 }
 
 @media screen and (min-width: 980px) {
+	#casona{
+		padding: 0;
+	}
 }
 
 @media screen and (min-width: 1280px) {
 	#casona{
 		height: 100%;
+		padding: 120px 0;
 	}
 
 }
@@ -1684,7 +1772,9 @@ ul.tabs li.current{
 	pointer-events: none;
 	transition: all .3s ease;
 }
-
+.return a{
+	display: flex;
+}
 .return-active{
 	opacity: 1;
 	pointer-events: inherit;
@@ -1694,3 +1784,162 @@ ul.tabs li.current{
 	width: 15px;
 }
     
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgb(23, 22, 22);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  pointer-events: none;
+  display: none;
+}
+
+.preloader-container{
+	width: 400px;
+	
+}
+
+.preloader-container img{
+	width: 100%;
+}
+
+.blocker{
+	z-index: 999;
+	padding: 10px;
+}
+
+.modal{
+	overflow: visible;
+	max-width: 100%;
+	width: 90%;
+	height: auto;
+	padding: 0;
+}
+
+.modal-carta img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.modal a.close-modal{
+	display: none;
+}
+
+.modal-close{
+	top:40px;
+	right: -50px;
+	background-image: url(../img/close-modal.svg);
+	width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.bodyactive{
+	overflow:hidden!important;
+
+}
+
+
+.cardBox {
+      perspective: 800px;
+    transition: all 0.3s ease 0s;
+    width: 120px;
+    height: 120px;
+    
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+ 
+}
+@media screen and (min-width : 580px) {
+
+}
+
+@media screen and (min-width: 980px) {
+}
+
+@media screen and (min-width: 1280px) {
+	.cardBox{
+		width: 160px;
+    	height: 160px;
+    	top: 400px;
+    	right: 200px;
+	}
+
+}
+.cardBox img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.cardBox:hover .card {
+  transform: rotateY( 180deg);
+}
+
+.card {
+  background:transparent;
+  cursor: default;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
+  width: 100%;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1s 1;
+  border:0;
+}
+
+
+.card .front,
+.card .back {
+  display: block;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.card .back {
+  transform: rotateY( 180deg);
+}
+
+
+
+
+
+.cardBox:nth-child(1) .card .back {
+  background: cornflowerblue;
+}
+
+
+@-webkit-keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
